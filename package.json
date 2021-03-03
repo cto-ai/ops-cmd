@@ -1,6 +1,6 @@
 {
   "name": "@cto.ai/ops-cmd",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "CTO.ai CLI command layer",
   "main": "index.js",
   "type": "module",
@@ -31,5 +31,17 @@
     "pre-commit": "^1.2.2",
     "standard": "^16.0.3",
     "tapx": "0.2.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cto-ai/ops-cmd.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/cto-ai/ops-cmd/issues"
+  },
+  "homepage": "https://github.com/cto-ai/ops-cmd#readme"
 }
