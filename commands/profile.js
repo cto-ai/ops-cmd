@@ -3,7 +3,7 @@ import { join, basename, dirname } from 'path'
 
 const { readlink, readdir, symlink, unlink, readFile, writeFile, lstat, mkdir, rmdir } = fs.promises
 
-export const $ = { describe: 'Create and select user profiles' }
+export const $ = { describe: 'Create and select user profiles.' }
 
 const prefabs = {
   staging: {
