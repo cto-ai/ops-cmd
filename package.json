@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "exit 0",
-    "//test": "clif-dev test @cto.ai/ops",
+    "test": "tap --100 test/*.test.js",
     "cov": "cov",
     "lint": "standard",
     "check": "npm test && npm run lint"
@@ -31,7 +30,7 @@
     "debug": "^4.3.1",
     "pre-commit": "^1.2.2",
     "standard": "^16.0.3",
-    "tapx": "0.2.0"
+    "tapx": "^0.2.3"
   },
   "directories": {
     "test": "test"

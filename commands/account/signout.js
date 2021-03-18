@@ -17,6 +17,7 @@ export default async function * signout ({ settings }) {
 
   const { auth } = settings
   const account = createAccount(auth)
+
   invalidate(account, tokens)
 
   yield { ns: 'analytics', event: 'Ops CLI Signout', username: user.username }

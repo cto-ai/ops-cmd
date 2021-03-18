@@ -29,7 +29,9 @@ export default async function * signin ({ inputs, settings }) {
   let { interactive, user, password } = inputs
   const { auth, api } = settings
   const account = createAccount(auth)
+
   const terminalSignin = interactive || user || password
+
   let tokens = null
   if (terminalSignin) {
     if (!user) {
@@ -61,13 +63,14 @@ export default async function * signin ({ inputs, settings }) {
   } catch (err) {
     throw new Fail({ type: 'api', err }, err.message)
   }
+
   if (!teams || teams.length === 0) {
     throw new Fail({ type: 'api' }, MSG_NO_TEAMS)
   }
 
   const team = teams.find(({ name }) => name === username)
 
-  yield { ns: 'config', action: 'update', state: { user, team, tokens } }
+  yield { ns: 'config', action: 'update', state: { user: username, team, tokens } }
 
   yield { ns: 'analytics', event: 'Ops CLI Signin', username }
 
