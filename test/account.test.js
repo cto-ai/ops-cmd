@@ -520,6 +520,28 @@ test('account signout', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
+test('account signout (invalidate fail handling)', async ({ matchSnapshot }) => {
+  const mocks = {
+    ...common.mocks({
+      async signout () { throw Error('test') }
+    })
+  }
+  const cmd = await harness('account signout', mocks)
+  const interactions = [{ tokens: {}, user: { username: 'test' } }]
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  matchSnapshot(patterns)
+})
+
+test('account signout (already signed out)', async ({ matchSnapshot }) => {
+  const mocks = { ...common.mocks() }
+  const cmd = await harness('account signout', mocks)
+  const interactions = [{ tokens: null, user: { username: 'test' } }]
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  matchSnapshot(patterns)
+})
+
 test('account signup', async ({ matchSnapshot }) => {
   const mocks = {
     ...common.mocks({

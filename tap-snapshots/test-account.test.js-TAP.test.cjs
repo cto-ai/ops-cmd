@@ -880,6 +880,57 @@ Array [
 ]
 `
 
+exports['test/account.test.js TAP account signout (already signed out) > must match snapshot 1'] = `
+Array [
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Error: 
+🤷‍♂️ Looks like you are already signed out.
+    Run {tuxTerm ops account:signin} to sign back into your account.
+ {
+    "command": AsyncGeneratorFunction signout(),
+    "ns": "failure",
+    "type": "print",
+  },
+]
+`
+
+exports['test/account.test.js TAP account signout (invalidate fail handling) > must match snapshot 1'] = `
+Array [
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Object {
+    "action": "start",
+    "message": "\\n{tuxEmphatic Signing out of }{tuxAction CTO.ai ops}\\n",
+    "ns": "spinner",
+  },
+  Object {
+    "event": "Ops CLI Signout",
+    "ns": "analytics",
+    "username": "test",
+  },
+  Object {
+    "action": "clear",
+    "ns": "config",
+  },
+  Object {
+    "action": "stop",
+    "message": "{tuxSuccess Done!}",
+    "ns": "spinner",
+  },
+  Object {
+    "message": "\\n{tuxSuccess ✓} Signed out! Type ops {tuxAction account:signin} to sign back into your account.\\n",
+    "ns": "print",
+  },
+]
+`
+
 exports['test/account.test.js TAP account signout > must match snapshot 1'] = `
 Array [
   Function Error(),

@@ -18,6 +18,10 @@ const prefabs = {
   }
 }
 
+const tryUnlink = async (path) => {
+  try { await unlink(path) } catch {}
+}
+
 async function selected (settingsPath) {
   try {
     const stat = await lstat(settingsPath)
@@ -71,6 +75,7 @@ export const create = {
         }, '{') + `\n${indent}${indent}}`
       }
       const template = createTemplate(shape)
+
       const { result } = yield { ns: 'prompt', name: 'result', type: 'snippet', required: true, message: 'Create Profile:', template }
       const { name, api, registry, ...auth } = result.values
       profile = { name, api, registry, auth }
@@ -117,20 +122,21 @@ export const select = {
     }
 
     async function * flip (path, type) {
-      let backupContent = null
+      let backupContent = ''
       try { backupContent = await readFile(path) } catch {}
       try {
-        try { await unlink(path) } catch {}
+        await tryUnlink(path)
         await symlink(join(profDir, profile, `${type}.json`), path)
       } catch (err) {
-        if (current === null && err.code === 'EEXIST' && backupContent) {
+        if (current) throw err
+        if (err.code === 'EEXIST' && backupContent) {
           const backup = `${path}.${Date.now()}.bak`
           yield { ns: 'print', message: `Current ${type} file is not linked to a profile, backing up to ${backup}` }
           await writeFile(backup, backupContent)
+          await tryUnlink(path)
           await symlink(join(profDir, profile, `${type}.json`), path)
-        } else {
-          throw err
-        }
+          /* c8 ignore next */
+        } // ^ cov bug, remove when c8 is fixed
       }
     }
 

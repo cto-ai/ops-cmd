@@ -10,9 +10,5 @@ Array [
   Object {
     "ns": "auth ",
   },
-  Object {
-    "action": "read",
-    "ns": "config",
-  },
 ]
 `

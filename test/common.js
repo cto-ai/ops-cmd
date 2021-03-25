@@ -21,7 +21,9 @@ export const mocks = (instance = {}) => ({
 })
 
 export const settings = {
+  name: 'test',
   api: 'http://api.test',
+  registry: 'registry.test',
   auth: {
     id: 'ops-cli',
     realm: 'ops',

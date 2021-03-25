@@ -3,7 +3,10 @@ import createAccount from '@cto.ai/ops-ctrl-account'
 export const describe = 'Log out from your account.'
 
 async function invalidate (account, tokens) {
-  try { await account.signout(tokens) } catch {}
+  try {
+    await account.signout(tokens)
+  /* c8 ignore next */
+  } catch {} // <-- c8 cov bug, remove ignore when fixed
 }
 
 export default async function * signout ({ settings }) {
