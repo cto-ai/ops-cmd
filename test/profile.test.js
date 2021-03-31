@@ -499,7 +499,7 @@ test('profile remove', async ({ matchSnapshot }) => {
   const cmd = await harness('profile remove', mocks)
   const interactions = new Map([
     [{ ns: 'prompt', type: 'select', name: 'profile' }, { profile: 'test2' }],
-    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, ({ format }) => ({ sure: format(true) === 'Yes' })]
+    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, { sure: true }]
   ])
   const opts = {
     settings: {
@@ -538,7 +538,7 @@ test('profile remove (disconfirm)', async ({ matchSnapshot }) => {
   const cmd = await harness('profile remove', mocks)
   const interactions = new Map([
     [{ ns: 'prompt', type: 'select', name: 'profile' }, { profile: 'test2' }],
-    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, ({ format }) => ({ sure: format(false) === 'Yes' })]
+    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, { sure: true }]
   ])
   const opts = {
     settings: {
@@ -578,9 +578,9 @@ test('profile remove (error)', async ({ matchSnapshot }) => {
   const cmd = await harness('profile remove', mocks)
   const interactions = new Map([
     [{ ns: 'prompt', type: 'select', name: 'profile' }, { profile: 'test2' }],
-    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, async ({ format }) => {
+    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, async () => {
       await chmod(join(configDir, 'profiles', 'test2'), 0x000)
-      return { sure: format(true) === 'Yes' }
+      return { sure: true }
     }]
   ])
   const opts = {

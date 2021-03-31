@@ -188,8 +188,7 @@ export const remove = {
       ns: 'prompt',
       type: 'confirm',
       name: 'sure',
-      message: `Delete ${profile}?`,
-      format (sure) { return sure ? 'Yes' : 'No' }
+      message: `Delete ${profile}?`
     }
     if (sure === false) {
       yield { ns: 'print', message: `Profile {bold ${profile}} was not deleted` }

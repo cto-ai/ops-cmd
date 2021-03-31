@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports['test/profile.test.js TAP profile create (error: exists) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create (error: exists) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -23,7 +23,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile create (error: general) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create (error: general) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -46,11 +46,11 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile create (profile contains sub-arrays) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create (profile contains sub-arrays) > must match snapshot 1`] = `
 {"name":"test","api":"http://api.test","registry":"registry.test","auth":{"id":"ops-cli","realm":"ops","url":"https://cto.ai/auth"}}
 `
 
-exports['test/profile.test.js TAP profile create (profile contains sub-arrays) > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile create (profile contains sub-arrays) > must match snapshot 2`] = `
 Array [
   Function Error(),
   Object {
@@ -68,11 +68,11 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile create --prefab "staging" > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create --prefab "staging" > must match snapshot 1`] = `
 {"name":"staging","auth":{"id":"ops-cli","realm":"ops","url":"https://www.stg-platform.hc.ai/auth"},"api":"https://www.stg-platform.hc.ai/api/v1","registry":"registry.stg-platform.hc.ai"}
 `
 
-exports['test/profile.test.js TAP profile create --prefab "staging" > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile create --prefab "staging" > must match snapshot 2`] = `
 Array [
   Function Error(),
   Object {
@@ -82,11 +82,11 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile create -p "staging" > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create -p "staging" > must match snapshot 1`] = `
 {"name":"staging","auth":{"id":"ops-cli","realm":"ops","url":"https://www.stg-platform.hc.ai/auth"},"api":"https://www.stg-platform.hc.ai/api/v1","registry":"registry.stg-platform.hc.ai"}
 `
 
-exports['test/profile.test.js TAP profile create -p "staging" > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile create -p "staging" > must match snapshot 2`] = `
 Array [
   Function Error(),
   Object {
@@ -96,11 +96,11 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile create > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile create > must match snapshot 1`] = `
 {"name":"test","api":"http://api.test","registry":"registry.test","auth":{"id":"ops-cli","realm":"ops","url":"https://cto.ai/auth"}}
 `
 
-exports['test/profile.test.js TAP profile create > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile create > must match snapshot 2`] = `
 Array [
   Function Error(),
   Object {
@@ -118,7 +118,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile list > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile list > must match snapshot 1`] = `
 Array [
   Object {
     "message": "{bold * test1}",
@@ -131,7 +131,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile remove (disconfirm) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile remove (disconfirm) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -151,27 +151,25 @@ Array [
     "type": "select",
   },
   Object {
-    "format": Function format(sure),
     "message": "Delete test2?",
     "name": "sure",
     "ns": "prompt",
     "type": "confirm",
   },
   Object {
-    "message": "Profile {bold test2} was not deleted",
+    "message": "Profile {bold test2} was deleted",
     "ns": "print",
   },
 ]
 `
 
-exports['test/profile.test.js TAP profile remove (disconfirm) > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile remove (disconfirm) > must match snapshot 2`] = `
 Array [
   "test1",
-  "test2",
 ]
 `
 
-exports['test/profile.test.js TAP profile remove (error) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile remove (error) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -191,7 +189,6 @@ Array [
     "type": "select",
   },
   Object {
-    "format": Function format(sure),
     "message": "Delete test2?",
     "name": "sure",
     "ns": "prompt",
@@ -210,7 +207,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile remove > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile remove > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -230,7 +227,6 @@ Array [
     "type": "select",
   },
   Object {
-    "format": Function format(sure),
     "message": "Delete test2?",
     "name": "sure",
     "ns": "prompt",
@@ -243,13 +239,13 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile remove > must match snapshot 2'] = `
+exports[`test/profile.test.js TAP profile remove > must match snapshot 2`] = `
 Array [
   "test1",
 ]
 `
 
-exports['test/profile.test.js TAP profile select (backup read failure mode) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select (backup read failure mode) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -270,7 +266,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile select (backup->fail->restore->restore fail (config is symlinked)) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select (backup->fail->restore->restore fail (config is symlinked)) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -306,7 +302,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile select (backup->fail->restore->restore fail (no current)) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select (backup->fail->restore->restore fail (no current)) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -342,7 +338,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile select (backup->fail->restore->restore fail) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select (backup->fail->restore->restore fail) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -363,7 +359,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile select (backup->upgrade) > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select (backup->upgrade) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -384,7 +380,7 @@ Array [
 ]
 `
 
-exports['test/profile.test.js TAP profile select > must match snapshot 1'] = `
+exports[`test/profile.test.js TAP profile select > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
