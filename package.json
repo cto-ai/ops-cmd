@@ -17,7 +17,10 @@
   "author": "David Mark Clements <dave@cto.ai>",
   "license": "MIT",
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "ignore": [
+      "tap-snapshots"
+    ]
   },
   "dependencies": {
     "@cto.ai/ops-ctrl-account": "^1.0.1",
