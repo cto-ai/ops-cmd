@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports['test/account.test.js TAP account reset (failure) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account reset (failure) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -20,7 +20,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account reset (signed in) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account reset (signed in) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -39,7 +39,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account reset > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account reset > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -53,7 +53,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: auth api error) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: auth api error) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -74,7 +74,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: empty teams array from teams api) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: empty teams array from teams api) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -94,7 +94,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: no teams from teams apis) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: no teams from teams apis) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -114,7 +114,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: teams api error) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: teams api error) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -135,7 +135,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: teams api unauthorized) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: teams api unauthorized) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -158,7 +158,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: teams api upstream error) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: teams api upstream error) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -179,7 +179,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin (failure: unauthorized) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin (failure: unauthorized) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -207,7 +207,7 @@ Forgot your password? Run {bold ops account:reset}
 ]
 `
 
-exports['test/account.test.js TAP account signin --interactive > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --interactive > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -260,7 +260,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --password "TEST" --interactive > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --password "TEST" --interactive > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -306,7 +306,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --password "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --password "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -352,7 +352,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --user "TEST" --interactive > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --user "TEST" --interactive > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -399,7 +399,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --user "TEST" --password "TEST" --interactive > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --user "TEST" --password "TEST" --interactive > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -439,7 +439,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --user "TEST" --password "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --user "TEST" --password "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -479,7 +479,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin --user "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin --user "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -526,7 +526,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -i > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -i > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -579,7 +579,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -p "TEST" -i > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -p "TEST" -i > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -625,7 +625,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -p "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -p "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -671,7 +671,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -u "TEST" -i > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -u "TEST" -i > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -718,7 +718,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -u "TEST" -p "TEST" -i > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -u "TEST" -p "TEST" -i > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -758,7 +758,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -u "TEST" -p "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -u "TEST" -p "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -798,7 +798,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin -u "TEST" > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin -u "TEST" > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -845,7 +845,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signin > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signin > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -880,7 +880,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signout (already signed out) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signout (already signed out) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -898,7 +898,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signout (invalidate fail handling) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signout (invalidate fail handling) > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -931,7 +931,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signout > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signout > must match snapshot 1`] = `
 Array [
   Function Error(),
   Object {
@@ -964,7 +964,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (failure: empty teams array from teams api) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (failure: empty teams array from teams api) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -999,7 +999,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (failure: no teams from teams apis) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (failure: no teams from teams apis) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1034,7 +1034,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (failure: teams api error) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (failure: teams api error) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1070,7 +1070,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (failure: teams api unauthorized) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (failure: teams api unauthorized) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1108,7 +1108,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (invalid tokens) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (invalid tokens) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1142,7 +1142,7 @@ Forgot your password? Run {bold ops account:reset}
 ]
 `
 
-exports['test/account.test.js TAP account signup (not signed in) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (not signed in) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1200,7 +1200,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (signout failure) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (signout failure) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1258,7 +1258,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup (tokens missing) > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup (tokens missing) > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1290,7 +1290,7 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account signup > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account signup > must match snapshot 1`] = `
 Array [
   Object {
     "message": "\\n💻 {tuxMulti2 CTO.ai Ops} - {tuxAction The CLI built for Teams} 🚀\\n\\n👋 {tuxEmphatic Welcome to the} {tuxCallOut Ops CLI beta}!\\n\\n❔ Let us know if you have questions...\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n⚡️ Let's get you {tuxCallOut started}...\\n",
@@ -1341,13 +1341,13 @@ Array [
 ]
 `
 
-exports['test/account.test.js TAP account support > must match snapshot 1'] = `
+exports[`test/account.test.js TAP account support > must match snapshot 1`] = `
 Array [
   Object {
     "ns": "auth",
   },
   Object {
-    "message": "\\n❔ Please reach out to us with questions anytime!\\n\\n⌚️ We are typically available {tuxEmphatic Monday-Friday 9am-5pm PT}\\n\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n🖖 We'll get back to you as soon as we possibly can.\\n",
+    "message": "\\n❔ Please reach out to us with questions anytime!\\n⌚️ We are typically available {tuxEmphatic Monday-Friday 9am-5pm PT}\\n📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}\\n\\n🖖 We'll get back to you as soon as we possibly can.\\n",
     "ns": "print",
   },
 ]

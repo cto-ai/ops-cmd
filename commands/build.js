@@ -66,8 +66,8 @@ export default async function * build ({ settings, inputs }) {
       case 'ERR_PIPELINE_JOB_NAME_INVALID':
       case 'ERR_PIPELINE_JOB_DESC_INVALID':
       case 'ERR_ENV_VAR_INVALID':
-      case 'ERR_SERVICE_DOMAIN_INVALID': throw Fail({ err, code: err.code }, ERR_OPS_YML(err))
-      default: throw Fail({ err, code: err.code }, err.message)
+      case 'ERR_SERVICE_DOMAIN_INVALID': throw new Fail({ err, code: err.code }, ERR_OPS_YML(err))
+      default: throw new Fail({ err, code: err.code }, err.message)
     }
   }
 }

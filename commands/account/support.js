@@ -7,9 +7,7 @@ export default async function * support () {
 
 const MSG_SUPPORT = `
 ❔ Please reach out to us with questions anytime!
-
 ⌚️ We are typically available {tuxEmphatic Monday-Friday 9am-5pm PT}
-
 📬 You can always reach us by {tuxUrl email mailto:support@cto.ai} {dim support@cto.ai}
 
 🖖 We'll get back to you as soon as we possibly can.
