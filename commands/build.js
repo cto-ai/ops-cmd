@@ -27,15 +27,18 @@ export default async function * build ({ settings, inputs }) {
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })
 
-  const builder = instance.build({ op, api, registry, select, tokens, team, cache })
+  const builder = instance.build({ op, api, registry, select, tokens, team: team.name, cache })
   try {
     for await (const info of builder) {
       yield * dockerConnect(info, builder, Fail)
       if (info.isForgeWarning) yield { ns: 'print', type: 'warn', message: info.message }
 
-      const { label } = info
+      const { label, type } = info
 
-      if (label === 'docker-output') yield { ns: 'print', type: 'raw', message: info.output }
+      if (label === 'docker-output') {
+        if (type === 'status') yield { ns: 'spinner', action: 'start', message: info.output }
+        else yield { ns: 'print', type: 'raw', message: info.output }
+      }
 
       if (label === 'building') {
         yield { ns: 'print', message: MSG_BUILDING(info) }
@@ -43,12 +46,12 @@ export default async function * build ({ settings, inputs }) {
           ns: 'analytics',
           event: 'Ops CLI Build',
           username: user.username,
-          team,
+          team: team.name,
           name: info.name,
           version: info.version,
           // description: info.description,
-          namespace: `@${team}/${info.name}`,
-          namespace_version: `@${team}/${info.name}:${info.version}`,
+          namespace: `@${team.name}/${info.name}`,
+          namespace_version: `@${team.name}/${info.name}:${info.version}`,
           image: `${registry}/${info.name}:${info.version}`
         }
       }
@@ -70,6 +73,8 @@ export default async function * build ({ settings, inputs }) {
       case 'ERR_SERVICE_DOMAIN_INVALID': throw new Fail({ err, code: err.code }, ERR_OPS_YML(err))
       default: throw new Fail({ err, code: err.code }, err.message)
     }
+  } finally {
+    yield { ns: 'spinner', action: 'stop' }
   }
 }
 
