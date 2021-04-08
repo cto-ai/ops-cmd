@@ -45,8 +45,8 @@ export default async function * signin ({ inputs, settings }) {
       yield { ns: 'spinner', action: 'start', message: '{tuxEmphatic Authenticating}' }
       tokens = await account.signin({ user, password })
     } catch (err) {
+      yield { ns: 'spinner', action: 'stop', message: 'failed' }
       if (err.code === 'ERR_UNAUTHORIZED') {
-        yield { ns: 'spinner', action: 'stop', message: 'failed' }
         throw new Fail({ type: 'print' }, MSG_UNAUTHORIZED)
       }
       throw new Fail({ type: 'api', err })

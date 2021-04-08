@@ -21,11 +21,12 @@ export default async function * build ({ settings, inputs }) {
   yield { ns: 'auth' }
   class Fail extends (yield Error) { command = build }
   const { tokens, team, user } = yield { ns: 'config', action: 'read' }
-  const op = inputs.path ? dirname(resolve(process.cwd(), inputs.path)) : process.cwd()
+  const op = inputs.dir ? dirname(resolve(process.cwd(), inputs.dir)) : process.cwd()
   const { api, registry } = settings
   const select = inputs.ops
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })
+
   const builder = instance.build({ op, api, registry, select, tokens, team, cache })
   try {
     for await (const info of builder) {

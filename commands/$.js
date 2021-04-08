@@ -15,27 +15,27 @@ export async function * dockerConnect (info, iter, Fail) {
 }
 
 const MSG_INSTALL_DOCKER = `
-{tuxCallout Uh-oh! You'll just need to install Docker for CTO.ai ops to run properly - go here to install it now.}
+{tuxCallOut Uh-oh! You'll just need to install Docker for CTO.ai ops to run properly - go here to install it now.}
 
 {tuxSuccess →} https://docs.docker.com/install/
 {tuxSecondary  You'll need to create an account with Docker in order to start the download }
 
-Once installed, make sure you start the Docker app, then come back to this terminal and type {tuxCallout 'Y'}
+Once installed, make sure you start the Docker app, then come back to this terminal and type {tuxCallOut 'Y'}
 We'll be waiting right here when you're ready 👍
 `
 
 const MSG_START_DOCKER = `
-{tuxCallout It looks like you have Docker installed, but it's not currently running.",}
-{tuxCallout Please start Docker to continue}
+{tuxCallOut It looks like you have Docker installed, but it's not currently running.",}
+{tuxCallOut Please start Docker to continue}
 
-Once Docker is running, come back to this terminal and type {tuxCallout  'Y'}
+Once Docker is running, come back to this terminal and type {tuxCallOut  'Y'}
 We'll be waiting right here when you're ready 👍
 `
 
 const MSG_CHECK_AGAIN = `
-{tuxCallout Please check that Docker is running again and come back here when ready.}
+{tuxCallOut Please check that Docker is running again and come back here when ready.}
 `
 
 const MSG_DOCKER_ISSUE = `
-{tuxCallout Hmm. Docker still doesn't seem to be running.}
-{tuxCallout Please check again, or run, "ops account support" and we'll be happy to help you out.}`
+{tuxCallOut Hmm. Docker still doesn't seem to be running.}
+{tuxCallOut Please check again, or run, "ops account support" and we'll be happy to help you out.}`

@@ -7,64 +7,67 @@ export const describe = 'Creates an account to use with ops CLI.'
 export default async function * signup ({ settings }) {
   yield { ns: 'print', message: MSG_SUPPORT }
 
-  yield { ns: 'spinner', action: 'start', message: MSG_AUTH }
-
-  class Fail extends (yield Error) { command = signup }
-
-  const { auth, api } = settings
-
-  const account = createAccount(auth)
-
-  const config = yield { ns: 'config', action: 'read' }
-
   try {
-    if (config.tokens) {
-      await account.signout(config.tokens)
+    yield { ns: 'spinner', action: 'start', message: MSG_AUTH }
+
+    class Fail extends (yield Error) { command = signup }
+
+    const { auth, api } = settings
+
+    const account = createAccount(auth)
+
+    const config = yield { ns: 'config', action: 'read' }
+
+    try {
+      if (config.tokens) {
+        await account.signout(config.tokens)
+      }
+    } catch (err) {
+      yield { ns: 'print', message: MSG_SIGNOUT_FAILED, interpolate: [err.message] }
     }
-  } catch (err) {
-    yield { ns: 'print', message: MSG_SIGNOUT_FAILED, interpolate: [err.message] }
+
+    const transaction = account.signup()
+
+    const { value: url } = await account.endpoints.next()
+    yield { ns: 'print', message: MSG_ADVICE(url) }
+
+    const tokens = await transaction
+
+    if (!tokens) {
+      yield { ns: 'spinner', action: 'stop', message: MSG_FAILED }
+      throw new Fail(MSG_TOKENS_MISSING)
+    }
+
+    try {
+      validate(tokens)
+    } catch {
+      yield { ns: 'spinner', action: 'stop', message: MSG_FAILED }
+      throw new Fail(MSG_NOT_FOUND)
+    }
+
+    const user = identity(tokens)
+    const { username } = user
+
+    let teams = null
+    try {
+      teams = await userTeams(api, tokens)
+    } catch (err) {
+      throw new Fail({ type: 'api', err }, err.message)
+    }
+    if (!teams || teams.length === 0) {
+      throw new Fail({ type: 'api' }, MSG_NO_TEAMS)
+    }
+
+    const team = teams.find(({ name }) => name === username)
+
+    yield { ns: 'config', action: 'update', state: { user, team, tokens } }
+
+    yield { ns: 'analytics', event: 'Ops CLI Signup', username }
+
+    yield { ns: 'print', message: MSG_WELCOME }
+  } finally {
+    yield { ns: 'spinner', action: 'stop' }
   }
-
-  const transaction = account.signup()
-
-  const { value: url } = await account.endpoints.next()
-  yield { ns: 'print', message: MSG_ADVICE(url) }
-
-  const tokens = await transaction
-
-  if (!tokens) {
-    yield { ns: 'spinner', action: 'stop', message: MSG_FAILED }
-    throw new Fail(MSG_TOKENS_MISSING)
-  }
-
-  try {
-    validate(tokens)
-  } catch {
-    yield { ns: 'spinner', action: 'stop', message: MSG_FAILED }
-    throw new Fail(MSG_NOT_FOUND)
-  }
-
-  const user = identity(tokens)
-  const { username } = user
-
-  let teams = null
-  try {
-    teams = await userTeams(api, tokens)
-  } catch (err) {
-    throw new Fail({ type: 'api', err }, err.message)
-  }
-  if (!teams || teams.length === 0) {
-    throw new Fail({ type: 'api' }, MSG_NO_TEAMS)
-  }
-
-  const team = teams.find(({ name }) => name === username)
-
-  yield { ns: 'config', action: 'update', state: { user, team, tokens } }
-
-  yield { ns: 'analytics', event: 'Ops CLI Signup', username }
-
-  yield { ns: 'spinner', action: 'stop' }
-  yield { ns: 'print', message: MSG_WELCOME }
 }
 
 const MSG_AUTH = 'Authenticating using Single Sign On'
