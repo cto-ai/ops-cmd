@@ -65,6 +65,11 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
+  Object {
+    "action": "stop",
+    "message": "failed",
+    "ns": "spinner",
+  },
   Error {
     "command": AsyncGeneratorFunction signin(),
     "err": Error: signin test error,
@@ -991,6 +996,10 @@ Array [
     "message": "\\n💻  Please follow the prompts in the browser window and verify your email address before logging in\\n\\nIf the link doesn't open, please click the following URL {dim http://signup.test}\\n",
     "ns": "print",
   },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
   Error: According to the API, this user does not belong to any teams. {
     "command": AsyncGeneratorFunction signup(),
     "ns": "failure",
@@ -1026,6 +1035,10 @@ Array [
     "message": "\\n💻  Please follow the prompts in the browser window and verify your email address before logging in\\n\\nIf the link doesn't open, please click the following URL {dim http://signup.test}\\n",
     "ns": "print",
   },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
   Error: According to the API, this user does not belong to any teams. {
     "command": AsyncGeneratorFunction signup(),
     "ns": "failure",
@@ -1060,6 +1073,10 @@ Array [
   Object {
     "message": "\\n💻  Please follow the prompts in the browser window and verify your email address before logging in\\n\\nIf the link doesn't open, please click the following URL {dim http://signup.test}\\n",
     "ns": "print",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
   },
   Error: test error {
     "command": AsyncGeneratorFunction signup(),
@@ -1097,6 +1114,10 @@ Array [
     "message": "\\n💻  Please follow the prompts in the browser window and verify your email address before logging in\\n\\nIf the link doesn't open, please click the following URL {dim http://signup.test}\\n",
     "ns": "print",
   },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
   Error: Unauthorized {
     "command": AsyncGeneratorFunction signup(),
     "err": Error: Unauthorized {
@@ -1131,6 +1152,10 @@ Array [
   Object {
     "action": "stop",
     "message": "❗️\\n",
+    "ns": "spinner",
+  },
+  Object {
+    "action": "stop",
     "ns": "spinner",
   },
   Error: 🤔 Sorry, we couldn’t find an account with that email or password.
@@ -1190,12 +1215,12 @@ Array [
     "username": "test",
   },
   Object {
-    "action": "stop",
-    "ns": "spinner",
-  },
-  Object {
     "message": "\\n🎉 Account sign up complete - Ready to go!\\n\\n{tuxAction You're ready to build and share Ops with your team}\\nGet started by trying the following commands:\\n{reset.green →} Search for an Op\\n{tuxTerm ops search}\\n\\n{reset.green → } Create an Op\\n{tuxTerm ops init}\\n\\n{reset.green →} Publish an Op\\n{tuxTerm ops publish}\\n",
     "ns": "print",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
   },
 ]
 `
@@ -1248,12 +1273,12 @@ Array [
     "username": "test",
   },
   Object {
-    "action": "stop",
-    "ns": "spinner",
-  },
-  Object {
     "message": "\\n🎉 Account sign up complete - Ready to go!\\n\\n{tuxAction You're ready to build and share Ops with your team}\\nGet started by trying the following commands:\\n{reset.green →} Search for an Op\\n{tuxTerm ops search}\\n\\n{reset.green → } Create an Op\\n{tuxTerm ops init}\\n\\n{reset.green →} Publish an Op\\n{tuxTerm ops publish}\\n",
     "ns": "print",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
   },
 ]
 `
@@ -1281,6 +1306,10 @@ Array [
   Object {
     "action": "stop",
     "message": "❗️\\n",
+    "ns": "spinner",
+  },
+  Object {
+    "action": "stop",
     "ns": "spinner",
   },
   Error: Tokens missing {
@@ -1331,12 +1360,12 @@ Array [
     "username": "test",
   },
   Object {
-    "action": "stop",
-    "ns": "spinner",
-  },
-  Object {
     "message": "\\n🎉 Account sign up complete - Ready to go!\\n\\n{tuxAction You're ready to build and share Ops with your team}\\nGet started by trying the following commands:\\n{reset.green →} Search for an Op\\n{tuxTerm ops search}\\n\\n{reset.green → } Create an Op\\n{tuxTerm ops init}\\n\\n{reset.green →} Publish an Op\\n{tuxTerm ops publish}\\n",
     "ns": "print",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
   },
 ]
 `
