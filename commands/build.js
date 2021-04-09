@@ -23,7 +23,9 @@ export default async function * build ({ settings, inputs }) {
   const { tokens, team, user } = yield { ns: 'config', action: 'read' }
   const op = inputs.dir ? dirname(resolve(process.cwd(), inputs.dir)) : process.cwd()
   const { api, registry } = settings
-  const select = inputs.ops
+  const { ops = [] } = inputs
+  if (ops.length === 0) throw new Fail({ type: 'print' }, ERR_OPS_FLAG)
+  const select = ops
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })
 
@@ -70,13 +72,15 @@ export default async function * build ({ settings, inputs }) {
       case 'ERR_PIPELINE_JOB_NAME_INVALID':
       case 'ERR_PIPELINE_JOB_DESC_INVALID':
       case 'ERR_ENV_VAR_INVALID':
-      case 'ERR_SERVICE_DOMAIN_INVALID': throw new Fail({ err, code: err.code }, ERR_OPS_YML(err))
+      case 'ERR_SERVICE_DOMAIN_INVALID': throw new Fail({ err, code: err.code, type: 'print' }, ERR_OPS_YML(err))
       default: throw new Fail({ err, code: err.code }, err.message)
     }
   } finally {
     yield { ns: 'spinner', action: 'stop' }
   }
 }
+
+const ERR_OPS_FLAG = '{tuxEmphatic ❗ The --ops flag is required}'
 
 const MSG_BUILDING = ({ name, version }) => `🛠  Building: {tuxCallOut ${name}:${version}}`
 const MSG_BUILT = ({ run, publish }) => `
