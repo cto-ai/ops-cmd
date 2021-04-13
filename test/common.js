@@ -1,24 +1,31 @@
 import * as account from '@cto.ai/ops-ctrl-account'
 
-export const mocks = (instance = {}) => ({
-  '@cto.ai/ops-ctrl-account': {
-    ...account,
-    default () {
-      return {
-        async refresh (tokens) { return tokens },
-        ...instance
-      }
-    },
-    identity () {
-      return {
-        id: 'xxx',
-        username: 'test',
-        email: 'test'
-      }
-    },
-    validate () { return true }
+export const mocks = (instance = {}) => {
+  const identity = () => {
+    return {
+      id: 'xxx',
+      username: 'test',
+      email: 'test'
+    }
   }
-})
+  const validate = () => { return true }
+  const result = {
+    '@cto.ai/ops-ctrl-account': {
+      ...account,
+      default () {
+        return {
+          async refresh (tokens) { return tokens },
+          ...instance
+        }
+      },
+      identity,
+      validate
+    }
+  }
+  result['@cto.ai/ops-ctrl-account'].default.identity = identity
+  result['@cto.ai/ops-ctrl-account'].default.validate = validate
+  return result
+}
 
 export const settings = {
   name: 'test',

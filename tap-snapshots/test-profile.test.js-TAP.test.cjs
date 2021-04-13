@@ -17,7 +17,7 @@ Array [
     "type": "snippet",
   },
   Error: Profile "test" already exists {
-    "command": AsyncGeneratorFunction create(),
+    "command": "create",
     "ns": "failure",
   },
 ]
@@ -35,7 +35,7 @@ Array [
     "type": "snippet",
   },
   Error: Unable to create profile {
-    "command": AsyncGeneratorFunction create(),
+    "command": "create",
     "err": TypeError: Converting circular structure to JSON
     --> starting at object with constructor 'Object'
     |     property 'result' -> object with constructor 'Object'
@@ -195,7 +195,7 @@ Array [
     "type": "confirm",
   },
   Error: Failed to delete profile {bold test2} {
-    "command": AsyncGeneratorFunction remove(),
+    "command": "remove",
     "err": Error: EACCES: permission denied, scandir  {
       "code": "EACCES",
       "errno": -13,
@@ -289,7 +289,7 @@ Array [
     "ns": "print",
   },
   Error: Failed to select profile {bold test2} {
-    "command": AsyncGeneratorFunction select(),
+    "command": "select",
     "err": Error: EEXIST: file already exists, symlink '/profiles/test2/config.json' -> '/config.json' {
       "code": "EEXIST",
       "dest": "/config.json",
@@ -325,7 +325,7 @@ Array [
     "ns": "print",
   },
   Error: Failed to select profile {bold test2} {
-    "command": AsyncGeneratorFunction select(),
+    "command": "select",
     "err": Error: EEXIST: file already exists, symlink '/profiles/test2/config.json' -> '/config.json' {
       "code": "EEXIST",
       "dest": "/config.json",

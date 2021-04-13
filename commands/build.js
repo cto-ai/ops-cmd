@@ -28,7 +28,6 @@ export default async function * build ({ settings, inputs }) {
   const select = ops
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })
-
   const builder = instance.build({ op, api, registry, select, tokens, team: team.name, cache })
   try {
     for await (const info of builder) {

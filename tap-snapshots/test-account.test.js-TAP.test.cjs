@@ -13,7 +13,7 @@ Array [
     "ns": "config",
   },
   Error: Unable to reset {
-    "command": AsyncGeneratorFunction reset(),
+    "command": "reset",
     "err": Error: reset test failure,
     "ns": "failure",
   },
@@ -71,7 +71,7 @@ Array [
     "ns": "spinner",
   },
   Error {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "err": Error: signin test error,
     "ns": "failure",
     "type": "api",
@@ -92,7 +92,7 @@ Array [
     "ns": "spinner",
   },
   Error: According to the API, this user does not belong to any teams. {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "ns": "failure",
     "type": "api",
   },
@@ -112,7 +112,7 @@ Array [
     "ns": "spinner",
   },
   Error: According to the API, this user does not belong to any teams. {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "ns": "failure",
     "type": "api",
   },
@@ -132,7 +132,7 @@ Array [
     "ns": "spinner",
   },
   Error: test error {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "err": Error: test error,
     "ns": "failure",
     "type": "api",
@@ -153,7 +153,7 @@ Array [
     "ns": "spinner",
   },
   Error: Unauthorized {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "err": Error: Unauthorized {
       "code": "ERR_UNAUTHORIZED",
     },
@@ -176,7 +176,7 @@ Array [
     "ns": "spinner",
   },
   Error: test error {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "err": Error: test error,
     "ns": "failure",
     "type": "api",
@@ -205,7 +205,7 @@ Array [
 🤔 Sorry, we couldn’t find an account with that email or password.
 Forgot your password? Run {bold ops account:reset}
  {
-    "command": AsyncGeneratorFunction signin(),
+    "command": "signin",
     "ns": "failure",
     "type": "print",
   },
@@ -896,7 +896,7 @@ Array [
 🤷‍♂️ Looks like you are already signed out.
     Run {tuxTerm ops account:signin} to sign back into your account.
  {
-    "command": AsyncGeneratorFunction signout(),
+    "command": "signout",
     "ns": "failure",
     "type": "print",
   },
@@ -1001,7 +1001,7 @@ Array [
     "ns": "spinner",
   },
   Error: According to the API, this user does not belong to any teams. {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "ns": "failure",
     "type": "api",
   },
@@ -1040,7 +1040,7 @@ Array [
     "ns": "spinner",
   },
   Error: According to the API, this user does not belong to any teams. {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "ns": "failure",
     "type": "api",
   },
@@ -1079,7 +1079,7 @@ Array [
     "ns": "spinner",
   },
   Error: test error {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "err": Error: test error,
     "ns": "failure",
     "type": "api",
@@ -1119,7 +1119,7 @@ Array [
     "ns": "spinner",
   },
   Error: Unauthorized {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "err": Error: Unauthorized {
       "code": "ERR_UNAUTHORIZED",
     },
@@ -1161,7 +1161,7 @@ Array [
   Error: 🤔 Sorry, we couldn’t find an account with that email or password.
 Forgot your password? Run {bold ops account:reset}
  {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "ns": "failure",
   },
 ]
@@ -1313,7 +1313,7 @@ Array [
     "ns": "spinner",
   },
   Error: Tokens missing {
-    "command": AsyncGeneratorFunction signup(),
+    "command": "signup",
     "ns": "failure",
   },
 ]
