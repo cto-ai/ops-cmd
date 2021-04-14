@@ -6,9 +6,9 @@ export const fallthrough = true
 export async function * dockerConnect (info, iter, Fail) {
   if (!info.isDockerProblem) return
   if (info.retries > 3) yield { ns: 'print', message: MSG_DOCKER_ISSUE }
-  if (info.retries === 1) yield { ns: 'print', message: MSG_CHECK_AGAIN }
-  if (info.code === 'WRN_DOCKER_NOT_FOUND') yield { ns: 'print', message: MSG_INSTALL_DOCKER }
-  if (info.code === 'WRN_DOCKER_NOT_RUNNING') yield { ns: 'print', message: MSG_START_DOCKER }
+  else if (info.retries === 1) yield { ns: 'print', message: MSG_CHECK_AGAIN }
+  else if (info.code === 'WRN_DOCKER_NOT_FOUND') yield { ns: 'print', message: MSG_INSTALL_DOCKER }
+  else if (info.code === 'WRN_DOCKER_NOT_RUNNING') yield { ns: 'print', message: MSG_START_DOCKER }
   const { retry } = yield { ns: 'prompt', type: 'confirm', name: 'retry', message: 'Ready to continue?' }
   if (retry === false) throw new Fail({ type: 'silent', exitCode: 0 })
   await iter.next({ retry })

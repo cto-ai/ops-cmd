@@ -157,7 +157,7 @@ Array [
     "type": "confirm",
   },
   Object {
-    "message": "Profile {bold test2} was deleted",
+    "message": "Profile {bold test2} was not deleted",
     "ns": "print",
   },
 ]
@@ -166,6 +166,7 @@ Array [
 exports[`test/profile.test.js TAP profile remove (disconfirm) > must match snapshot 2`] = `
 Array [
   "test1",
+  "test2",
 ]
 `
 

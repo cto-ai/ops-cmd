@@ -68,7 +68,7 @@ const buildMocks = (opts = {}) => {
           async * build (options) {
             // load forge with current mocks:
             const forge = await load('@cto.ai/ops-ctrl-forge', mocks)
-            const instance = forge.default(options)
+            const instance = forge.default(...args)
             if (opts.build) {
               yield * opts.build.call(instance, options)
               return
@@ -120,7 +120,7 @@ test('build ./ops-dir --ops "TEST" (success)', async ({ matchSnapshot }) => {
       yield * this.build(opts)
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build ./ops-dir --ops "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -402,6 +402,103 @@ test('build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID)', async ({ matchS
   matchSnapshot(patterns)
 })
 
+test('build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND)', async ({ matchSnapshot }) => {
+  let buildOpts = null
+  const mocks = buildMocks({
+    async * build (opts) {
+      buildOpts = opts
+      yield * this.build(opts)
+    },
+    async stat () {
+      throw Error()
+    }
+  })
+  const cmd = await harness('build --ops "TEST"', mocks)
+  const interactions = new Map([
+    [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
+    [{ ns: 'prompt', type: 'confirm', name: 'retry' }, { retry: false }]
+  ])
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
+  matchSnapshot(buildOpts)
+  matchSnapshot(patterns)
+})
+
+test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING)', async ({ matchSnapshot }) => {
+  let buildOpts = null
+  const mocks = buildMocks({
+    async * build (opts) {
+      buildOpts = opts
+      yield * this.build(opts)
+    },
+    async ping () {
+      throw Error()
+    }
+  })
+  const cmd = await harness('build --ops "TEST"', mocks)
+  const interactions = new Map([
+    [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
+    [{ ns: 'prompt', type: 'confirm', name: 'retry' }, { retry: false }]
+  ])
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
+  matchSnapshot(buildOpts)
+  matchSnapshot(patterns)
+})
+
+test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry)', async ({ matchSnapshot }) => {
+  let buildOpts = null
+  const mocks = buildMocks({
+    async * build (opts) {
+      buildOpts = opts
+      yield * this.build(opts)
+    },
+    async ping () {
+      throw Error()
+    }
+  })
+  const cmd = await harness('build --ops "TEST"', mocks)
+  let c = 0
+  const interactions = new Map([
+    [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
+    [{ ns: 'prompt', type: 'confirm', name: 'retry' }, () => ({ retry: !c++ })]
+  ])
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
+  matchSnapshot(buildOpts)
+  matchSnapshot(patterns)
+})
+
+test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries)', async ({ matchSnapshot }) => {
+  let buildOpts = null
+  const mocks = buildMocks({
+    async * build (opts) {
+      buildOpts = opts
+      yield * this.build(opts)
+    },
+    async ping () {
+      throw Error()
+    }
+  })
+  const cmd = await harness('build --ops "TEST"', mocks)
+  let c = 0
+  const interactions = new Map([
+    [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
+    [{ ns: 'prompt', type: 'confirm', name: 'retry' }, () => {
+      if (c++ < 4) return { retry: true }
+      return { retry: false }
+    }]
+  ])
+  const opts = { settings: { ...common.settings } }
+  const patterns = await cmd(interactions, opts)
+  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
+  matchSnapshot(buildOpts)
+  matchSnapshot(patterns)
+})
+
 test('build --ops "TEST" (failure: unknown error)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
@@ -420,5 +517,3 @@ test('build --ops "TEST" (failure: unknown error)', async ({ matchSnapshot }) =>
   matchSnapshot(buildOpts)
   matchSnapshot(patterns)
 })
-
-// TODO: docker retry via build

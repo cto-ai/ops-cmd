@@ -632,6 +632,269 @@ Array [
 ]
 `
 
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 1`] = `
+Object {
+  "api": "http://api.test",
+  "cache": true,
+  "op": "/--dummy--/ops-cmd",
+  "registry": "registry.test",
+  "select": Array [
+    "TEST",
+  ],
+  "team": "test-team",
+  "tokens": Object {},
+}
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 2`] = `
+Array [
+  Object {
+    "ns": "auth",
+  },
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Object {
+    "message": "\\n{tuxCallOut Uh-oh! You'll just need to install Docker for CTO.ai ops to run properly - go here to install it now.}\\n\\n{tuxSuccess →} https://docs.docker.com/install/\\n{tuxSecondary  You'll need to create an account with Docker in order to start the download }\\n\\nOnce installed, make sure you start the Docker app, then come back to this terminal and type {tuxCallOut 'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
+  Error {
+    "command": "build",
+    "exitCode": 0,
+    "ns": "failure",
+    "type": "silent",
+  },
+]
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 1`] = `
+Object {
+  "api": "http://api.test",
+  "cache": true,
+  "op": "/--dummy--/ops-cmd",
+  "registry": "registry.test",
+  "select": Array [
+    "TEST",
+  ],
+  "team": "test-team",
+  "tokens": Object {},
+}
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 2`] = `
+Array [
+  Object {
+    "ns": "auth",
+  },
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Object {
+    "message": "\\n{tuxCallOut It looks like you have Docker installed, but it's not currently running.\\",}\\n{tuxCallOut Please start Docker to continue}\\n\\nOnce Docker is running, come back to this terminal and type {tuxCallOut  'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
+  Error {
+    "command": "build",
+    "exitCode": 0,
+    "ns": "failure",
+    "type": "silent",
+  },
+]
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 1`] = `
+Object {
+  "api": "http://api.test",
+  "cache": true,
+  "op": "/--dummy--/ops-cmd",
+  "registry": "registry.test",
+  "select": Array [
+    "TEST",
+  ],
+  "team": "test-team",
+  "tokens": Object {},
+}
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 2`] = `
+Array [
+  Object {
+    "ns": "auth",
+  },
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Object {
+    "message": "\\n{tuxCallOut It looks like you have Docker installed, but it's not currently running.\\",}\\n{tuxCallOut Please start Docker to continue}\\n\\nOnce Docker is running, come back to this terminal and type {tuxCallOut  'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "message": "Docker not running",
+    "ns": "print",
+    "type": "warn",
+  },
+  Object {
+    "message": "\\n{tuxCallOut Please check that Docker is running again and come back here when ready.}\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
+  Error {
+    "command": "build",
+    "exitCode": 0,
+    "ns": "failure",
+    "type": "silent",
+  },
+]
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 1`] = `
+Object {
+  "api": "http://api.test",
+  "cache": true,
+  "op": "/--dummy--/ops-cmd",
+  "registry": "registry.test",
+  "select": Array [
+    "TEST",
+  ],
+  "team": "test-team",
+  "tokens": Object {},
+}
+`
+
+exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 2`] = `
+Array [
+  Object {
+    "ns": "auth",
+  },
+  Function Error(),
+  Object {
+    "action": "read",
+    "ns": "config",
+  },
+  Object {
+    "message": "\\n{tuxCallOut It looks like you have Docker installed, but it's not currently running.\\",}\\n{tuxCallOut Please start Docker to continue}\\n\\nOnce Docker is running, come back to this terminal and type {tuxCallOut  'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "message": "Docker not running",
+    "ns": "print",
+    "type": "warn",
+  },
+  Object {
+    "message": "\\n{tuxCallOut Please check that Docker is running again and come back here when ready.}\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "message": "Docker not running",
+    "ns": "print",
+    "type": "warn",
+  },
+  Object {
+    "message": "\\n{tuxCallOut It looks like you have Docker installed, but it's not currently running.\\",}\\n{tuxCallOut Please start Docker to continue}\\n\\nOnce Docker is running, come back to this terminal and type {tuxCallOut  'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "message": "Docker not running",
+    "ns": "print",
+    "type": "warn",
+  },
+  Object {
+    "message": "\\n{tuxCallOut It looks like you have Docker installed, but it's not currently running.\\",}\\n{tuxCallOut Please start Docker to continue}\\n\\nOnce Docker is running, come back to this terminal and type {tuxCallOut  'Y'}\\nWe'll be waiting right here when you're ready 👍\\n",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "message": "Docker not running",
+    "ns": "print",
+    "type": "warn",
+  },
+  Object {
+    "message": "\\n{tuxCallOut Hmm. Docker still doesn't seem to be running.}\\n{tuxCallOut Please check again, or run, \\"ops account support\\" and we'll be happy to help you out.}",
+    "ns": "print",
+  },
+  Object {
+    "message": "Ready to continue?",
+    "name": "retry",
+    "ns": "prompt",
+    "type": "confirm",
+  },
+  Object {
+    "action": "stop",
+    "ns": "spinner",
+  },
+  Error {
+    "command": "build",
+    "exitCode": 0,
+    "ns": "failure",
+    "type": "silent",
+  },
+]
+`
+
 exports[`test/build.test.js TAP build --ops "TEST" (failure: unknown error) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",

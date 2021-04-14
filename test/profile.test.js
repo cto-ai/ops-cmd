@@ -538,7 +538,7 @@ test('profile remove (disconfirm)', async ({ matchSnapshot }) => {
   const cmd = await harness('profile remove', mocks)
   const interactions = new Map([
     [{ ns: 'prompt', type: 'select', name: 'profile' }, { profile: 'test2' }],
-    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, { sure: true }]
+    [{ ns: 'prompt', type: 'confirm', name: 'sure' }, { sure: false }]
   ])
   const opts = {
     settings: {
