@@ -1,6 +1,6 @@
 {
   "name": "@cto.ai/ops-cmd",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "CTO.ai CLI command layer",
   "main": "index.js",
   "type": "module",
