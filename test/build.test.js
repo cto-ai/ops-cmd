@@ -312,7 +312,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID)', async ({ matchSn
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
-      throw Object.assign(Error('ERR_PIPELINE_JOBS_INVALID'), { ERR_PIPELINE_JOBS_INVALID: 'ERR_PIPELINE_JOBS_INVALID' })
+      throw Object.assign(Error('ERR_PIPELINE_JOBS_INVALID'), { code: 'ERR_PIPELINE_JOBS_INVALID' })
     }
   })
   const cmd = await harness('build --ops "TEST"', mocks)

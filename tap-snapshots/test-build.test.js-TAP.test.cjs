@@ -461,13 +461,14 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: ERR_PIPELINE_JOBS_INVALID {
-    "code": undefined,
+  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOBS_INVALID} {
+    "code": "ERR_PIPELINE_JOBS_INVALID",
     "command": "build",
     "err": Error: ERR_PIPELINE_JOBS_INVALID {
-      "ERR_PIPELINE_JOBS_INVALID": "ERR_PIPELINE_JOBS_INVALID",
+      "code": "ERR_PIPELINE_JOBS_INVALID",
     },
     "ns": "failure",
+    "type": "print",
   },
 ]
 `
