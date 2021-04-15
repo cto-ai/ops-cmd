@@ -61,6 +61,7 @@ export default async function * build ({ settings, inputs }) {
     }
   } catch (err) {
     if (err instanceof Fail) throw err
+    if (err.errors) err = err.errors[0] // eslint-disable-line
     switch (err.code) {
       case 'ERR_NAME_INVALID':
       case 'ERR_DESC_INVALID':
