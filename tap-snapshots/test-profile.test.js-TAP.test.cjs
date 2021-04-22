@@ -16,7 +16,7 @@ Array [
     "template": "{\\n  \\"name\\": \\"\${name}\\",\\n  \\"api\\": \\"\${api}\\",\\n  \\"registry\\": \\"\${registry}\\",\\n  \\"auth\\": {\\n   \\"id\\": \\"\${id}\\",\\n   \\"url\\": \\"\${url}\\"\\n  }\\n}",
     "type": "snippet",
   },
-  Error: Profile "test" already exists {
+  Fail: Profile "test" already exists {
     "command": "create",
     "ns": "failure",
   },
@@ -34,7 +34,7 @@ Array [
     "template": "{\\n  \\"name\\": \\"\${name}\\",\\n  \\"api\\": \\"\${api}\\",\\n  \\"registry\\": \\"\${registry}\\",\\n  \\"auth\\": {\\n   \\"id\\": \\"\${id}\\",\\n   \\"url\\": \\"\${url}\\"\\n  }\\n}",
     "type": "snippet",
   },
-  Error: Unable to create profile {
+  Fail: Unable to create profile {
     "command": "create",
     "err": TypeError: Converting circular structure to JSON
     --> starting at object with constructor 'Object'
@@ -195,7 +195,7 @@ Array [
     "ns": "prompt",
     "type": "confirm",
   },
-  Error: Failed to delete profile {bold test2} {
+  Fail: Failed to delete profile {bold test2} {
     "command": "remove",
     "err": Error: EACCES: permission denied, scandir  {
       "code": "EACCES",
@@ -289,7 +289,7 @@ Array [
     "message": "Unable to restore config.json after selection failure",
     "ns": "print",
   },
-  Error: Failed to select profile {bold test2} {
+  Fail: Failed to select profile {bold test2} {
     "command": "select",
     "err": Error: EEXIST: file already exists, symlink '/profiles/test2/config.json' -> '/config.json' {
       "code": "EEXIST",
@@ -325,7 +325,7 @@ Array [
     "message": "Unable to restore config.json after selection failure",
     "ns": "print",
   },
-  Error: Failed to select profile {bold test2} {
+  Fail: Failed to select profile {bold test2} {
     "command": "select",
     "err": Error: EEXIST: file already exists, symlink '/profiles/test2/config.json' -> '/config.json' {
       "code": "EEXIST",

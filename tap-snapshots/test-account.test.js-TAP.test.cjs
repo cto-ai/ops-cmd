@@ -12,7 +12,7 @@ Array [
     "action": "read",
     "ns": "config",
   },
-  Error: Unable to reset {
+  Fail: Unable to reset {
     "command": "reset",
     "err": Error: reset test failure,
     "ns": "failure",
@@ -70,7 +70,7 @@ Array [
     "message": "failed",
     "ns": "spinner",
   },
-  Error {
+  Fail {
     "command": "signin",
     "err": Error: signin test error,
     "ns": "failure",
@@ -91,7 +91,7 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
-  Error: According to the API, this user does not belong to any teams. {
+  Fail: According to the API, this user does not belong to any teams. {
     "command": "signin",
     "ns": "failure",
     "type": "api",
@@ -111,7 +111,7 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
-  Error: According to the API, this user does not belong to any teams. {
+  Fail: According to the API, this user does not belong to any teams. {
     "command": "signin",
     "ns": "failure",
     "type": "api",
@@ -131,7 +131,7 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
-  Error: test error {
+  Fail: test error {
     "command": "signin",
     "err": Error: test error,
     "ns": "failure",
@@ -152,7 +152,7 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
-  Error: Unauthorized {
+  Fail: Unauthorized {
     "command": "signin",
     "err": Error: Unauthorized {
       "code": "ERR_UNAUTHORIZED",
@@ -175,7 +175,7 @@ Array [
     "message": "{tuxEmphatic Authenticating}",
     "ns": "spinner",
   },
-  Error: test error {
+  Fail: test error {
     "command": "signin",
     "err": Error: test error,
     "ns": "failure",
@@ -201,7 +201,7 @@ Array [
     "message": "failed",
     "ns": "spinner",
   },
-  Error: 
+  Fail: 
 🤔 Sorry, we couldn’t find an account with that email or password.
 Forgot your password? Run {bold ops account:reset}
  {
@@ -892,7 +892,7 @@ Array [
     "action": "read",
     "ns": "config",
   },
-  Error: 
+  Fail: 
 🤷‍♂️ Looks like you are already signed out.
     Run {tuxTerm ops account:signin} to sign back into your account.
  {
@@ -1000,7 +1000,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: According to the API, this user does not belong to any teams. {
+  Fail: According to the API, this user does not belong to any teams. {
     "command": "signup",
     "ns": "failure",
     "type": "api",
@@ -1039,7 +1039,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: According to the API, this user does not belong to any teams. {
+  Fail: According to the API, this user does not belong to any teams. {
     "command": "signup",
     "ns": "failure",
     "type": "api",
@@ -1078,7 +1078,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: test error {
+  Fail: test error {
     "command": "signup",
     "err": Error: test error,
     "ns": "failure",
@@ -1118,7 +1118,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: Unauthorized {
+  Fail: Unauthorized {
     "command": "signup",
     "err": Error: Unauthorized {
       "code": "ERR_UNAUTHORIZED",
@@ -1158,7 +1158,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: 🤔 Sorry, we couldn’t find an account with that email or password.
+  Fail: 🤔 Sorry, we couldn’t find an account with that email or password.
 Forgot your password? Run {bold ops account:reset}
  {
     "command": "signup",
@@ -1312,7 +1312,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: Tokens missing {
+  Fail: Tokens missing {
     "command": "signup",
     "ns": "failure",
   },

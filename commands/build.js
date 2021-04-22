@@ -11,10 +11,12 @@ export const $nocache = {
   type: 'boolean'
 }
 
-export const $ops = {
-  describe: 'List of ops from ops.yml you want to build.',
-  example: 'ops build . --ops commandName serviceName pipelineNamex',
-  type: 'list'
+export const $op = {
+  describe: 'An op from ops.yml you want to build',
+  example: 'ops build --op commandName --op serviceName --op pipelineName .',
+  repeatable: true,
+  required: true,
+  type: 'string'
 }
 
 export default async function * build ({ settings, inputs }) {
@@ -23,9 +25,8 @@ export default async function * build ({ settings, inputs }) {
   const { tokens, team, user } = yield { ns: 'config', action: 'read' }
   const op = inputs.dir ? dirname(resolve(process.cwd(), inputs.dir)) : process.cwd()
   const { api, registry } = settings
-  const { ops = [] } = inputs
-  if (ops.length === 0) throw new Fail({ type: 'print' }, ERR_OPS_FLAG)
-  const select = ops
+  if (!inputs.op) throw new Fail({ type: 'print' }, ERR_OP_FLAG)
+  const select = inputs.op
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })
   const builder = instance.build({ op, api, registry, select, tokens, team: team.name, cache })
@@ -80,7 +81,7 @@ export default async function * build ({ settings, inputs }) {
   }
 }
 
-const ERR_OPS_FLAG = '{tuxEmphatic ❗ The --ops flag is required}'
+const ERR_OP_FLAG = '{tuxEmphatic ❗ The --op flag is required}'
 
 const MSG_BUILDING = ({ name, version }) => `🛠  Building: {tuxCallOut ${name}:${version}}`
 const MSG_BUILT = ({ run, publish }) => `

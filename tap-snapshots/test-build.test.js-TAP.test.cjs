@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/build.test.js TAP build (--ops is required) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build (--op is required) > must match snapshot 1`] = `
 Array [
   Object {
     "ns": "auth",
@@ -15,7 +15,7 @@ Array [
     "action": "read",
     "ns": "config",
   },
-  Error: {tuxEmphatic ❗ The --ops flag is required} {
+  Fail: {tuxEmphatic ❗ The --op flag is required} {
     "command": "build",
     "ns": "failure",
     "type": "print",
@@ -23,7 +23,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --nocache --ops "TEST" (success) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --nocache --op "TEST" (success) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": false,
@@ -37,7 +37,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --nocache --ops "TEST" (success) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --nocache --op "TEST" (success) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -83,7 +83,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --nocache --ops "TEST1" "TEST2" (success) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --nocache --op "TEST1" --op "TEST2" (success) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": false,
@@ -98,7 +98,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --nocache --ops "TEST1" "TEST2" (success) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --nocache --op "TEST1" --op "TEST2" (success) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -173,7 +173,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (cwd, success) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (cwd, success) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -187,7 +187,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (cwd, success) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (cwd, success) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -233,7 +233,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_DESC_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_DESC_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -247,7 +247,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_DESC_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_DESC_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -261,7 +261,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_DESC_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_DESC_INVALID} {
     "code": "ERR_DESC_INVALID",
     "command": "build",
     "err": Error: ERR_DESC_INVALID {
@@ -273,7 +273,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_ENV_VAR_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_ENV_VAR_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -287,7 +287,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_ENV_VAR_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_ENV_VAR_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -301,7 +301,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_ENV_VAR_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_ENV_VAR_INVALID} {
     "code": "ERR_ENV_VAR_INVALID",
     "command": "build",
     "err": Error: ERR_ENV_VAR_INVALID {
@@ -313,7 +313,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NAME_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NAME_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -327,7 +327,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NAME_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NAME_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -341,7 +341,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NAME_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NAME_INVALID} {
     "code": "ERR_NAME_INVALID",
     "command": "build",
     "err": Error: ERR_NAME_INVALID {
@@ -353,7 +353,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NO_PUBLIC) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_PUBLIC) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -367,7 +367,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NO_PUBLIC) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_PUBLIC) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -381,7 +381,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NO_PUBLIC} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NO_PUBLIC} {
     "code": "ERR_NO_PUBLIC",
     "command": "build",
     "err": Error: ERR_NO_PUBLIC {
@@ -393,7 +393,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NO_RUN) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_RUN) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -407,7 +407,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_NO_RUN) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_RUN) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -421,7 +421,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NO_RUN} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_NO_RUN} {
     "code": "ERR_NO_RUN",
     "command": "build",
     "err": Error: ERR_NO_RUN {
@@ -433,7 +433,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOBS_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -447,7 +447,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOBS_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -461,7 +461,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOBS_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOBS_INVALID} {
     "code": "ERR_PIPELINE_JOBS_INVALID",
     "command": "build",
     "err": Error: ERR_PIPELINE_JOBS_INVALID {
@@ -473,7 +473,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -487,7 +487,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -501,7 +501,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOB_DESC_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOB_DESC_INVALID} {
     "code": "ERR_PIPELINE_JOB_DESC_INVALID",
     "command": "build",
     "err": Error: ERR_PIPELINE_JOB_DESC_INVALID {
@@ -513,7 +513,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -527,7 +527,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -541,7 +541,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOB_NAME_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_PIPELINE_JOB_NAME_INVALID} {
     "code": "ERR_PIPELINE_JOB_NAME_INVALID",
     "command": "build",
     "err": Error: ERR_PIPELINE_JOB_NAME_INVALID {
@@ -553,7 +553,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -567,7 +567,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -581,7 +581,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_SERVICE_DOMAIN_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_SERVICE_DOMAIN_INVALID} {
     "code": "ERR_SERVICE_DOMAIN_INVALID",
     "command": "build",
     "err": Error: ERR_SERVICE_DOMAIN_INVALID {
@@ -593,7 +593,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_VERSION_INVALID) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_VERSION_INVALID) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -607,7 +607,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: ERR_VERSION_INVALID) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_VERSION_INVALID) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -621,7 +621,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_VERSION_INVALID} {
+  Fail: {tuxEmphatic ❗ Sorry, we have difficulty parsing your ops.yml. ERR_VERSION_INVALID} {
     "code": "ERR_VERSION_INVALID",
     "command": "build",
     "err": Error: ERR_VERSION_INVALID {
@@ -633,7 +633,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -647,7 +647,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -671,7 +671,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error {
+  Fail {
     "command": "build",
     "exitCode": 0,
     "ns": "failure",
@@ -680,7 +680,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -694,7 +694,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -718,7 +718,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error {
+  Fail {
     "command": "build",
     "exitCode": 0,
     "ns": "failure",
@@ -727,7 +727,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -741,7 +741,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -780,7 +780,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error {
+  Fail {
     "command": "build",
     "exitCode": 0,
     "ns": "failure",
@@ -789,7 +789,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -803,7 +803,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -887,7 +887,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error {
+  Fail {
     "command": "build",
     "exitCode": 0,
     "ns": "failure",
@@ -896,7 +896,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: unknown error) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: unknown error) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -910,7 +910,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (failure: unknown error) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (failure: unknown error) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -924,7 +924,7 @@ Array [
     "action": "stop",
     "ns": "spinner",
   },
-  Error: test {
+  Fail: test {
     "code": undefined,
     "command": "build",
     "err": Error: test,
@@ -933,7 +933,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (success with warnings) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build --op "TEST" (success with warnings) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -947,7 +947,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build --ops "TEST" (success with warnings) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build --op "TEST" (success with warnings) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",
@@ -993,7 +993,7 @@ Array [
 ]
 `
 
-exports[`test/build.test.js TAP build ./ops-dir --ops "TEST" (success) > must match snapshot 1`] = `
+exports[`test/build.test.js TAP build ./ops-dir --op "TEST" (success) > must match snapshot 1`] = `
 Object {
   "api": "http://api.test",
   "cache": true,
@@ -1007,7 +1007,7 @@ Object {
 }
 `
 
-exports[`test/build.test.js TAP build ./ops-dir --ops "TEST" (success) > must match snapshot 2`] = `
+exports[`test/build.test.js TAP build ./ops-dir --op "TEST" (success) > must match snapshot 2`] = `
 Array [
   Object {
     "ns": "auth",

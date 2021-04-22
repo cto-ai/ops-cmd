@@ -83,7 +83,7 @@ const buildMocks = (opts = {}) => {
   return mocks
 }
 
-test('build (--ops is required)', async ({ matchSnapshot }) => {
+test('build (--op is required)', async ({ matchSnapshot }) => {
   const mocks = { ...common.mocks() }
   const cmd = await harness('build', mocks)
   const interactions = new Map([
@@ -94,7 +94,7 @@ test('build (--ops is required)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) => {
+test('build --op "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -102,7 +102,7 @@ test('build --ops "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) =>
       yield * this.build(opts)
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -113,7 +113,7 @@ test('build --ops "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) =>
   matchSnapshot(patterns)
 })
 
-test('build ./ops-dir --ops "TEST" (success)', async ({ matchSnapshot }) => {
+test('build ./ops-dir --op "TEST" (success)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -121,7 +121,7 @@ test('build ./ops-dir --ops "TEST" (success)', async ({ matchSnapshot }) => {
       yield * this.build(opts)
     }
   })
-  const cmd = await harness('build ./ops-dir --ops "TEST"', mocks)
+  const cmd = await harness('build ./ops-dir --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -132,7 +132,7 @@ test('build ./ops-dir --ops "TEST" (success)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (success with warnings)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (success with warnings)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -140,7 +140,7 @@ test('build --ops "TEST" (success with warnings)', async ({ matchSnapshot }) => 
       yield * this.build(opts)
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -151,7 +151,7 @@ test('build --ops "TEST" (success with warnings)', async ({ matchSnapshot }) => 
   matchSnapshot(patterns)
 })
 
-test('build --nocache --ops "TEST" (success)', async ({ matchSnapshot }) => {
+test('build --nocache --op "TEST" (success)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -159,7 +159,7 @@ test('build --nocache --ops "TEST" (success)', async ({ matchSnapshot }) => {
       yield * this.build(opts)
     }
   })
-  const cmd = await harness('build --nocache --ops "TEST"', mocks)
+  const cmd = await harness('build --nocache --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -170,7 +170,7 @@ test('build --nocache --ops "TEST" (success)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --nocache --ops "TEST1" "TEST2" (success)', async ({ matchSnapshot }) => {
+test('build --nocache --op "TEST1" --op "TEST2" (success)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -202,7 +202,7 @@ test('build --nocache --ops "TEST1" "TEST2" (success)', async ({ matchSnapshot }
           mountHome: false
   `
   })
-  const cmd = await harness('build --nocache --ops "TEST1" "TEST2"', mocks)
+  const cmd = await harness('build --nocache --op "TEST1" --op "TEST2"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -213,7 +213,7 @@ test('build --nocache --ops "TEST1" "TEST2" (success)', async ({ matchSnapshot }
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_NAME_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_NAME_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -221,7 +221,7 @@ test('build --ops "TEST" (failure: ERR_NAME_INVALID)', async ({ matchSnapshot })
       throw new AggregateError([Object.assign(Error('ERR_NAME_INVALID'), { code: 'ERR_NAME_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -232,7 +232,7 @@ test('build --ops "TEST" (failure: ERR_NAME_INVALID)', async ({ matchSnapshot })
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_DESC_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_DESC_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -240,7 +240,7 @@ test('build --ops "TEST" (failure: ERR_DESC_INVALID)', async ({ matchSnapshot })
       throw new AggregateError([Object.assign(Error('ERR_DESC_INVALID'), { code: 'ERR_DESC_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -251,7 +251,7 @@ test('build --ops "TEST" (failure: ERR_DESC_INVALID)', async ({ matchSnapshot })
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_VERSION_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_VERSION_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -259,7 +259,7 @@ test('build --ops "TEST" (failure: ERR_VERSION_INVALID)', async ({ matchSnapshot
       throw new AggregateError([Object.assign(Error('ERR_VERSION_INVALID'), { code: 'ERR_VERSION_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -270,7 +270,7 @@ test('build --ops "TEST" (failure: ERR_VERSION_INVALID)', async ({ matchSnapshot
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_NO_PUBLIC)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_NO_PUBLIC)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -278,7 +278,7 @@ test('build --ops "TEST" (failure: ERR_NO_PUBLIC)', async ({ matchSnapshot }) =>
       throw new AggregateError([Object.assign(Error('ERR_NO_PUBLIC'), { code: 'ERR_NO_PUBLIC' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -289,7 +289,7 @@ test('build --ops "TEST" (failure: ERR_NO_PUBLIC)', async ({ matchSnapshot }) =>
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_NO_RUN)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_NO_RUN)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -297,7 +297,7 @@ test('build --ops "TEST" (failure: ERR_NO_RUN)', async ({ matchSnapshot }) => {
       throw new AggregateError([Object.assign(Error('ERR_NO_RUN'), { code: 'ERR_NO_RUN' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -308,7 +308,7 @@ test('build --ops "TEST" (failure: ERR_NO_RUN)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_PIPELINE_JOBS_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -316,7 +316,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID)', async ({ matchSn
       throw new AggregateError([Object.assign(Error('ERR_PIPELINE_JOBS_INVALID'), { code: 'ERR_PIPELINE_JOBS_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -327,7 +327,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOBS_INVALID)', async ({ matchSn
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -335,7 +335,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID)', async ({ mat
       throw new AggregateError([Object.assign(Error('ERR_PIPELINE_JOB_NAME_INVALID'), { code: 'ERR_PIPELINE_JOB_NAME_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -346,7 +346,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID)', async ({ mat
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -354,7 +354,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID)', async ({ mat
       throw new AggregateError([Object.assign(Error('ERR_PIPELINE_JOB_DESC_INVALID'), { code: 'ERR_PIPELINE_JOB_DESC_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -365,7 +365,7 @@ test('build --ops "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID)', async ({ mat
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_ENV_VAR_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_ENV_VAR_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -373,7 +373,7 @@ test('build --ops "TEST" (failure: ERR_ENV_VAR_INVALID)', async ({ matchSnapshot
       throw new AggregateError([Object.assign(Error('ERR_ENV_VAR_INVALID'), { code: 'ERR_ENV_VAR_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -384,7 +384,7 @@ test('build --ops "TEST" (failure: ERR_ENV_VAR_INVALID)', async ({ matchSnapshot
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -392,7 +392,7 @@ test('build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID)', async ({ matchS
       throw new AggregateError([Object.assign(Error('ERR_SERVICE_DOMAIN_INVALID'), { code: 'ERR_SERVICE_DOMAIN_INVALID' })])
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
@@ -403,7 +403,7 @@ test('build --ops "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID)', async ({ matchS
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: WRN_DOCKER_NOT_FOUND)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -414,7 +414,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND)', async ({ matchSnapsho
       throw Error()
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
     [{ ns: 'prompt', type: 'confirm', name: 'retry' }, { retry: false }]
@@ -426,7 +426,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_FOUND)', async ({ matchSnapsho
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -437,7 +437,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING)', async ({ matchSnaps
       throw Error()
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
     [{ ns: 'prompt', type: 'confirm', name: 'retry' }, { retry: false }]
@@ -449,7 +449,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING)', async ({ matchSnaps
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -460,7 +460,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry)', async ({ m
       throw Error()
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   let c = 0
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
@@ -473,7 +473,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry)', async ({ m
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -484,7 +484,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries)', async ({
       throw Error()
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   let c = 0
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }],
@@ -500,7 +500,7 @@ test('build --ops "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries)', async ({
   matchSnapshot(patterns)
 })
 
-test('build --ops "TEST" (failure: unknown error)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (failure: unknown error)', async ({ matchSnapshot }) => {
   let buildOpts = null
   const mocks = buildMocks({
     async * build (opts) {
@@ -508,7 +508,7 @@ test('build --ops "TEST" (failure: unknown error)', async ({ matchSnapshot }) =>
       throw Error('test')
     }
   })
-  const cmd = await harness('build --ops "TEST"', mocks)
+  const cmd = await harness('build --op "TEST"', mocks)
   const interactions = new Map([
     [{ ns: 'config', action: 'read' }, { tokens: {}, user: { username: 'test' }, team: { name: 'test-team' } }]
   ])
