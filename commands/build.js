@@ -20,12 +20,12 @@ export const $op = {
 }
 
 export default async function * build ({ settings, inputs }) {
-  yield { ns: 'auth' }
   class Fail extends (yield Error) { command = build }
+  if (!inputs.op) throw new Fail({ type: 'print' }, ERR_OP_FLAG)
+  yield { ns: 'auth' }
   const { tokens, team, user } = yield { ns: 'config', action: 'read' }
   const op = inputs.dir ? dirname(resolve(process.cwd(), inputs.dir)) : process.cwd()
   const { api, registry } = settings
-  if (!inputs.op) throw new Fail({ type: 'print' }, ERR_OP_FLAG)
   const select = inputs.op
   const cache = !inputs.nocache
   const instance = await forge({ dockerMissingRetry: true })

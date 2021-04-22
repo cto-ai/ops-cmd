@@ -7,14 +7,7 @@
 'use strict'
 exports[`test/build.test.js TAP build (--op is required) > must match snapshot 1`] = `
 Array [
-  Object {
-    "ns": "auth",
-  },
   Function Error(),
-  Object {
-    "action": "read",
-    "ns": "config",
-  },
   Fail: {tuxEmphatic ❗ The --op flag is required} {
     "command": "build",
     "ns": "failure",
@@ -39,10 +32,10 @@ Object {
 
 exports[`test/build.test.js TAP build --nocache --op "TEST" (success) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -100,10 +93,10 @@ Object {
 
 exports[`test/build.test.js TAP build --nocache --op "TEST1" --op "TEST2" (success) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -189,10 +182,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (cwd, success) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -249,10 +242,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_DESC_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -289,10 +282,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_ENV_VAR_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -329,10 +322,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NAME_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -369,10 +362,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_PUBLIC) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -409,10 +402,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_NO_RUN) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -449,10 +442,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOBS_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -489,10 +482,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_DESC_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -529,10 +522,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_PIPELINE_JOB_NAME_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -569,10 +562,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_SERVICE_DOMAIN_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -609,10 +602,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: ERR_VERSION_INVALID) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -649,10 +642,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_FOUND) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -696,10 +689,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -743,10 +736,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 1 retry) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -805,10 +798,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: WRN_DOCKER_NOT_RUNNING, 4 retries) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -912,10 +905,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (failure: unknown error) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -949,10 +942,10 @@ Object {
 
 exports[`test/build.test.js TAP build --op "TEST" (success with warnings) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
@@ -1009,10 +1002,10 @@ Object {
 
 exports[`test/build.test.js TAP build ./ops-dir --op "TEST" (success) > must match snapshot 2`] = `
 Array [
+  Function Error(),
   Object {
     "ns": "auth",
   },
-  Function Error(),
   Object {
     "action": "read",
     "ns": "config",
