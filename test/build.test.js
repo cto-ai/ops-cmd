@@ -96,6 +96,16 @@ test('build (--op is required)', async ({ matchSnapshot }) => {
 
 test('build --op "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) => {
   let buildOpts = null
+  teardown(() => {
+    process.cwd = cwd
+  })
+  const { cwd } = process
+  process.cwd = () => {
+    if (/commands\/build/.test(Error().stack)) {
+      return '/--dummy--/ops-cmd'
+    }
+    return cwd()
+  }
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
@@ -108,13 +118,22 @@ test('build --op "TEST" (cwd, success)', async ({ teardown, matchSnapshot }) => 
   ])
   const opts = { settings: { ...common.settings } }
   const patterns = await cmd(interactions, opts)
-  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
   matchSnapshot(buildOpts)
   matchSnapshot(patterns)
 })
 
-test('build ./ops-dir --op "TEST" (success)', async ({ matchSnapshot }) => {
+test('build ./ops-dir --op "TEST" (success)', async ({ teardown, matchSnapshot }) => {
   let buildOpts = null
+  teardown(() => {
+    process.cwd = cwd
+  })
+  const { cwd } = process
+  process.cwd = () => {
+    if (/commands\/build/.test(Error().stack)) {
+      return '/--dummy--/ops-cmd'
+    }
+    return cwd()
+  }
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
@@ -127,13 +146,22 @@ test('build ./ops-dir --op "TEST" (success)', async ({ matchSnapshot }) => {
   ])
   const opts = { settings: { ...common.settings } }
   const patterns = await cmd(interactions, opts)
-  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
   matchSnapshot(buildOpts)
   matchSnapshot(patterns)
 })
 
-test('build --op "TEST" (success with warnings)', async ({ matchSnapshot }) => {
+test('build --op "TEST" (success with warnings)', async ({ teardown, matchSnapshot }) => {
   let buildOpts = null
+  teardown(() => {
+    process.cwd = cwd
+  })
+  const { cwd } = process
+  process.cwd = () => {
+    if (/commands\/build/.test(Error().stack)) {
+      return '/--dummy--/ops-cmd'
+    }
+    return cwd()
+  }
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
@@ -151,8 +179,18 @@ test('build --op "TEST" (success with warnings)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --nocache --op "TEST" (success)', async ({ matchSnapshot }) => {
+test('build --nocache --op "TEST" (success)', async ({ teardown, matchSnapshot }) => {
   let buildOpts = null
+  teardown(() => {
+    process.cwd = cwd
+  })
+  const { cwd } = process
+  process.cwd = () => {
+    if (/commands\/build/.test(Error().stack)) {
+      return '/--dummy--/ops-cmd'
+    }
+    return cwd()
+  }
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
@@ -170,8 +208,18 @@ test('build --nocache --op "TEST" (success)', async ({ matchSnapshot }) => {
   matchSnapshot(patterns)
 })
 
-test('build --nocache --op "TEST1" --op "TEST2" (success)', async ({ matchSnapshot }) => {
+test('build --nocache --op "TEST1" --op "TEST2" (success)', async ({ matchSnapshot, teardown }) => {
   let buildOpts = null
+  teardown(() => {
+    process.cwd = cwd
+  })
+  const { cwd } = process
+  process.cwd = () => {
+    if (/commands\/build/.test(Error().stack)) {
+      return '/--dummy--/ops-cmd'
+    }
+    return cwd()
+  }
   const mocks = buildMocks({
     async * build (opts) {
       buildOpts = opts
@@ -208,7 +256,6 @@ test('build --nocache --op "TEST1" --op "TEST2" (success)', async ({ matchSnapsh
   ])
   const opts = { settings: { ...common.settings } }
   const patterns = await cmd(interactions, opts)
-  buildOpts.op = buildOpts.op.replace(dirname(buildOpts.op), '/--dummy--')
   matchSnapshot(buildOpts)
   matchSnapshot(patterns)
 })

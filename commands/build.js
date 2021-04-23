@@ -1,4 +1,4 @@
-import { resolve, dirname } from 'path'
+import { resolve } from 'path'
 import forge from '@cto.ai/ops-ctrl-forge'
 import { dockerConnect } from './$.js'
 
@@ -24,7 +24,7 @@ export default async function * build ({ settings, inputs }) {
   if (!inputs.op) throw new Fail({ type: 'print' }, ERR_OP_FLAG)
   yield { ns: 'auth' }
   const { tokens, team, user } = yield { ns: 'config', action: 'read' }
-  const op = inputs.dir ? dirname(resolve(process.cwd(), inputs.dir)) : process.cwd()
+  const op = inputs.dir ? resolve(process.cwd(), inputs.dir) : process.cwd()
   const { api, registry } = settings
   const select = inputs.op
   const cache = !inputs.nocache

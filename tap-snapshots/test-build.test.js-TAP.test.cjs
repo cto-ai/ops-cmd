@@ -66,7 +66,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd} to test your op.\\n",
     "ns": "print",
   },
   Object {
@@ -127,7 +127,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST1} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST1} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd} to test your op.\\n",
     "ns": "print",
   },
   Object {
@@ -156,7 +156,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST2} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST2} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd} to test your op.\\n",
     "ns": "print",
   },
   Object {
@@ -216,7 +216,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd} to test your op.\\n",
     "ns": "print",
   },
   Object {
@@ -976,7 +976,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd} to test your op.\\n",
     "ns": "print",
   },
   Object {
@@ -990,7 +990,7 @@ exports[`test/build.test.js TAP build ./ops-dir --op "TEST" (success) > must mat
 Object {
   "api": "http://api.test",
   "cache": true,
-  "op": "/--dummy--/ops-cmd",
+  "op": "/--dummy--/ops-cmd/ops-dir",
   "registry": "registry.test",
   "select": Array [
     "TEST",
@@ -1036,7 +1036,7 @@ Array [
     "ns": "spinner",
   },
   Object {
-    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /Users/davidclements/code/cto.ai/ops-cmd} to test your op.\\n",
+    "message": "\\n💻 Run {tuxSuccess $} {italic.dim ops run TEST} to test your op.\\n📦 Run {tuxSuccess $} {italic.dim ops public /--dummy--/ops-cmd/ops-dir} to test your op.\\n",
     "ns": "print",
   },
   Object {
