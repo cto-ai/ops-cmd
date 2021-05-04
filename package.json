@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@cto.ai/ops-ctrl-account": "^1.0.1",
-    "@cto.ai/ops-ctrl-forge": "^1.0.0",
+    "@cto.ai/ops-ctrl-forge": "^1.1.0",
     "babel-eslint": "^10.1.0",
     "desm": "^1.1.0",
     "got": "^11.8.1"
