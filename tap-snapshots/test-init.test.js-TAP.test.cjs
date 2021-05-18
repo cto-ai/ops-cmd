@@ -48,14 +48,22 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondaray Names must be lowercase}\\n\\n🏷  {tuxEmphatic Name:}",
+    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "🏷  Name:",
     "name": "name",
     "ns": "prompt",
     "type": "input",
     "validate": Function validate(input),
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -105,14 +113,22 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondaray Names must be lowercase}\\n\\n🏷  {tuxEmphatic Name:}",
+    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "🏷  Name:",
     "name": "name",
     "ns": "prompt",
     "type": "input",
     "validate": Function validate(input),
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -175,14 +191,22 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondaray Names must be lowercase}\\n\\n🏷  {tuxEmphatic Name:}",
+    "message": "\\nProvide a name for your new command {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "🏷  Name:",
     "name": "name",
     "ns": "prompt",
     "type": "input",
     "validate": Function validate(input),
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -221,13 +245,8 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic test/index.js}",
+    "message": "📁 {italic test/index.js} {tuxSuccess ←} {tuxEmphatic Start developing here!}",
     "ns": "print",
-  },
-  Object {
-    "message": "{tuxSuccess ←} {tuxEmphatic Start developing here!}",
-    "ns": "print",
-    "type": "raw",
   },
   Object {
     "message": "📁 {italic test/.dockerignore}",
@@ -265,7 +284,15 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a name for your new service {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -304,13 +331,8 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic dest/index.js}",
+    "message": "📁 {italic dest/index.js} {tuxSuccess ←} {tuxEmphatic Start developing here!}",
     "ns": "print",
-  },
-  Object {
-    "message": "{tuxSuccess ←} {tuxEmphatic Start developing here!}",
-    "ns": "print",
-    "type": "raw",
   },
   Object {
     "message": "📁 {italic dest/.dockerignore}",
@@ -348,7 +370,15 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a name for your new unknown {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -393,7 +423,15 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a name for your new unknown {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -451,7 +489,15 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a name for your new service {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",
@@ -490,13 +536,8 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic dest/index.js}",
+    "message": "📁 {italic dest/index.js} {tuxSuccess ←} {tuxEmphatic Start developing here!}",
     "ns": "print",
-  },
-  Object {
-    "message": "{tuxSuccess ←} {tuxEmphatic Start developing here!}",
-    "ns": "print",
-    "type": "raw",
   },
   Object {
     "message": "📁 {italic dest/.dockerignore}",
@@ -534,7 +575,15 @@ Array [
     "ns": "auth",
   },
   Object {
-    "message": "\\nProvide a description {tuxSuccess →}\\n✍️  {tuxEmphatic Description:}\\n",
+    "message": "\\nProvide a name for your new service {tuxSuccess →}\\n{tuxSecondary Names must be lowercase}",
+    "ns": "print",
+  },
+  Object {
+    "message": "\\nProvide a description {tuxSuccess →}",
+    "ns": "print",
+  },
+  Object {
+    "message": "✍️  Description:",
     "name": "description",
     "ns": "prompt",
     "type": "input",

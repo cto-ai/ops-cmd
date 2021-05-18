@@ -28,13 +28,15 @@ export default async function * init ({ inputs }) {
   const { kind = 'command', template } = inputs
   if (!inputs.template) throw new Fail('The --template flag is required')
 
+  yield { ns: 'print', message: MSG_NAME_PREAMBLE(kind) }
+
   const { name } = inputs.name
     ? inputs
     : (yield {
         ns: 'prompt',
         type: 'input',
         name: 'name',
-        message: MSG_NAME_PROMPT(kind),
+        message: '🏷  Name:',
         validate (input) {
           if (input === '') return 'You need name your Op before you can continue'
           if ((/^[a-z0-9_-]*$/).test(input) === false) {
@@ -44,11 +46,13 @@ export default async function * init ({ inputs }) {
         }
       })
 
+  yield { ns: 'print', message: MSG_DESC_PREAMBLE }
+
   const { description } = yield {
     ns: 'prompt',
     type: 'input',
     name: 'description',
-    message: MSG_DESC_PROMPT,
+    message: '✍️  Description:',
     validate (input) {
       if (input === '') return 'You need to provide a description of your Op before continuing'
       return true
@@ -84,10 +88,8 @@ export default async function * init ({ inputs }) {
     }
     const path = './' + relative(process.cwd(), dir)
     for await (const { name } of await opendir(dir)) {
-      yield { ns: 'print', message: `📁 {italic ${join(path, name)}}` }
-      if (/main|index/.test(name)) {
-        yield { ns: 'print', type: 'raw', message: MSG_START_HERE }
-      }
+      const startHere = /main|index/.test(name) ? MSG_START_HERE : ''
+      yield { ns: 'print', message: `📁 {italic ${join(path, name)}}${startHere}` }
     }
     yield { ns: 'print', message: MSG_TIP(name) }
   } catch (err) {
@@ -106,21 +108,17 @@ const MSG_SUCCESS = `
 🎉 Success! Your new Op is ready to start coding...
 `
 
-const MSG_START_HERE = '{tuxSuccess ←} {tuxEmphatic Start developing here!}'
+const MSG_START_HERE = ' {tuxSuccess ←} {tuxEmphatic Start developing here!}'
 
-const MSG_NAME_PROMPT = (kind) => `
+const MSG_NAME_PREAMBLE = (kind) => `
 Provide a name for your new ${kind} {tuxSuccess →}
-{tuxSecondaray Names must be lowercase}
-
-🏷  {tuxEmphatic Name:}`
+{tuxSecondary Names must be lowercase}`
 
 const MSG_TIP = (name) => `
 🚀 To try out your Op run: {tuxTerm ops run ${name}}
 `
 
-const MSG_DESC_PROMPT = `
-Provide a description {tuxSuccess →}
-✍️  {tuxEmphatic Description:}
-`
+const MSG_DESC_PREAMBLE = `
+Provide a description {tuxSuccess →}`
 
 const ERR_FAIL = ({ message }) => `{tuxEmphatic ❗ Sorry, we were unable to initialize this template. ${message}}`
