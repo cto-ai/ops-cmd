@@ -2,7 +2,7 @@ import fs from 'fs'
 import { resolve, relative, join } from 'path'
 import forge from '@cto.ai/ops-ctrl-forge'
 
-const { opendir } = fs.promises
+const { readdir } = fs.promises
 
 export const describe = 'Create a new op.'
 
@@ -87,7 +87,8 @@ export default async function * init ({ inputs }) {
       templates: [kind]
     }
     const path = './' + relative(process.cwd(), dir)
-    for await (const { name } of await opendir(dir)) {
+    const files = await readdir(dir, { withFileTypes: true })
+    for await (const { name } of files.sort((a, b) => a < b ? -1 : (a > b) ? 1 : 0)) {
       const startHere = /main|index/.test(name) ? MSG_START_HERE : ''
       yield { ns: 'print', message: `📁 {italic ${join(path, name)}}${startHere}` }
     }

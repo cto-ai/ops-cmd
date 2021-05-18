@@ -237,7 +237,7 @@ Array [
     ],
   },
   Object {
-    "message": "📁 {italic test/ops.yml}",
+    "message": "📁 {italic test/.dockerignore}",
     "ns": "print",
   },
   Object {
@@ -249,7 +249,7 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic test/.dockerignore}",
+    "message": "📁 {italic test/ops.yml}",
     "ns": "print",
   },
   Object {
@@ -323,7 +323,7 @@ Array [
     ],
   },
   Object {
-    "message": "📁 {italic dest/ops.yml}",
+    "message": "📁 {italic dest/.dockerignore}",
     "ns": "print",
   },
   Object {
@@ -335,7 +335,7 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic dest/.dockerignore}",
+    "message": "📁 {italic dest/ops.yml}",
     "ns": "print",
   },
   Object {
@@ -528,7 +528,7 @@ Array [
     ],
   },
   Object {
-    "message": "📁 {italic dest/ops.yml}",
+    "message": "📁 {italic dest/.dockerignore}",
     "ns": "print",
   },
   Object {
@@ -540,7 +540,7 @@ Array [
     "ns": "print",
   },
   Object {
-    "message": "📁 {italic dest/.dockerignore}",
+    "message": "📁 {italic dest/ops.yml}",
     "ns": "print",
   },
   Object {
