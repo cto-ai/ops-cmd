@@ -22,8 +22,12 @@ export const $template = {
   type: 'string'
 }
 
+/* c8 ignore next */
+const crossPlatform = (a, b) => a < b ? -1 : (a > b) ? 1 : 0 // platform dependent for coverage
+
 export default async function * init ({ inputs }) {
   class Fail extends (yield Error) { command = init }
+
   yield { ns: 'auth' }
   const { kind = 'command', template } = inputs
   if (!inputs.template) throw new Fail('The --template flag is required')
@@ -88,7 +92,7 @@ export default async function * init ({ inputs }) {
     }
     const path = './' + relative(process.cwd(), dir)
     const files = await readdir(dir, { withFileTypes: true })
-    for await (const { name } of files.sort((a, b) => a < b ? -1 : (a > b) ? 1 : 0)) {
+    for await (const { name } of files.sort(crossPlatform)) {
       const startHere = /main|index/.test(name) ? MSG_START_HERE : ''
       yield { ns: 'print', message: `📁 {italic ${join(path, name)}}${startHere}` }
     }
